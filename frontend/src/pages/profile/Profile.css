@@ -1,0 +1,69 @@
+* { box-sizing: border-box; }
+
+.page-header { color: #1a1a2e; padding: 20px 16px 0; }
+.page-header h1 { margin: 0; color: #1a1a2e; font-size: 19px; font-weight: 700; }
+.welcome-sub { margin: 4px 0 0; color: #6b7280; font-size: 13px; }
+
+.empty-state {
+  margin: 16px 16px 0; min-height: 140px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; color: #9ca3af; text-align: center; padding: 20px;
+}
+.empty-state svg { margin-bottom: 8px; color: #8b5cf6; }
+.empty-state p { font-size: 13px; }
+
+/* =========================================================
+   PROFILE INFO — plain list, not a boxed card.
+   No border/background/shadow here anymore; rows are
+   separated only by the hairline already on .profile-row,
+   so this matches the (already unboxed) Accounts list below.
+   ========================================================= */
+
+.form-card {
+  margin: 16px 16px 0;
+  padding: 2px 0;
+}
+
+.profile-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 4px; border-bottom: 1px solid #f4f4f8;
+  color: #1a1a2e; font-size: 13px;
+}
+.profile-row:last-child { border-bottom: none; }
+.profile-row svg { color: #7c3aed; font-size: 16px; flex-shrink: 0; }
+
+.section-block { margin: 24px 16px 32px; }
+.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.section-header h2 { margin: 0; color: #1a1a2e; font-size: 15px; font-weight: 650; }
+
+.profile-account-row { justify-content: space-between; padding: 14px 4px; }
+.profile-account-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.profile-account-left svg {
+  width: 34px; height: 34px; padding: 8px; border-radius: 50%;
+  background: #f3e8ff; color: #7c3aed; flex-shrink: 0; box-sizing: border-box;
+}
+.profile-account-type { font-size: 13px; font-weight: 650; color: #1a1a2e; }
+.profile-account-meta {
+  margin-top: 2px; font-size: 11px; color: #9ca3af;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px;
+}
+
+.icon-btn {
+  background: #f9f8fc; border: 1px solid #e3ddf0; color: #6b7280;
+  border-radius: 8px; width: 32px; height: 32px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 14px; transition: background 0.15s ease, color 0.15s ease;
+}
+.icon-btn:hover { background: #f3e8ff; color: #7c3aed; }
+
+@media (min-width: 900px) {
+  .page-header { max-width: 700px; margin: 0 auto; padding: 28px 40px 0; }
+  .page-header h1 { font-size: 22px; }
+
+  .empty-state { max-width: 700px; margin: 20px auto 0; min-height: 160px; }
+  .form-card { max-width: 700px; margin: 20px auto 0; padding: 2px 0; }
+  .section-block { max-width: 700px; margin: 28px auto 48px; }
+
+  .profile-row { padding: 16px 4px; font-size: 14px; }
+  .profile-account-row { padding: 16px 4px; }
+  .profile-account-meta { max-width: 320px; font-size: 12px; }
+}

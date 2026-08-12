@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate   # NEVER use 'update' in production — validate only, prevents accidental schema changes
+    show-sql: false
+
+logging:
+  level:
+    com.banking: INFO
+    org.springframework.security: WARN

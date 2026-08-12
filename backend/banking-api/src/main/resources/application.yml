@@ -1,0 +1,46 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: banking-api
+
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/banking_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:Rahul@838}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:Srinivasrahul838@gmail.com}
+    password: ${MAIL_APP_PASSWORD:Rahul@838}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+jwt:
+  secret: ${JWT_SECRET:bankingSecretKeyForJWTTokenGenerationMustBeVeryLongAndSecure123456}
+  expiration: 86400000
+
+app:
+  frontend-url: ${FRONTEND_URL:http://localhost:3000}
+
+logging:
+  level:
+    com.banking: DEBUG
+    org.springframework.security: DEBUG

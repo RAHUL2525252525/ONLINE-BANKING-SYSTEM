@@ -1,0 +1,137 @@
+* { box-sizing: border-box; }
+
+.page-header { color: #1a1a2e; }
+
+.page-header.row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  padding: 20px 16px 0;
+}
+.page-header h1 { margin: 0; color: #1a1a2e; font-size: 19px; font-weight: 700; }
+.welcome-sub { margin: 4px 0 0; color: #6b7280; font-size: 13px; }
+
+.btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #a78bfa);
+  color: #ffffff; border: none; border-radius: 10px;
+  padding: 10px 16px; font-size: 13px; font-weight: 600;
+  cursor: pointer; box-shadow: 0 8px 18px rgba(124, 58, 237, 0.25);
+  transition: transform 0.15s ease;
+}
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.btn-inline { display: inline-flex; align-items: center; justify-content: center; gap: 6px; width: 100%; }
+
+.form-group { margin: 16px 16px 0; }
+.form-group label { display: block; color: #6b7280; font-size: 12px; margin-bottom: 6px; }
+.form-group select,
+.form-group input {
+  width: 100%; background: #ffffff; border: 1px solid #e3ddf0;
+  border-radius: 10px; padding: 10px 12px; color: #1a1a2e; font-size: 13px;
+}
+.tx-account-selector { max-width: 100%; }
+
+/* This card is a real form (choose account, enter amount) —
+   it stays boxed. Only the transaction *list* below gets
+   unboxed into a plain list. */
+.form-card {
+  margin: 16px 16px 0; padding: 16px;
+  border: 1px solid #eef0f5; border-radius: 16px;
+  background: #ffffff; box-shadow: 0 8px 24px rgba(30, 17, 71, 0.06);
+}
+.info-banner {
+  margin: 16px 16px 0; padding: 12px 16px; border-radius: 10px;
+  background: #f3e8ff; border: 1px solid #e0c9fb; color: #7c3aed; font-size: 13px;
+}
+
+.inline-form { display: flex; flex-direction: column; gap: 12px; }
+.inline-form select,
+.inline-form input {
+  width: 100%; background: #f9f8fc; border: 1px solid #e3ddf0;
+  border-radius: 10px; padding: 10px 12px; color: #1a1a2e; font-size: 13px;
+}
+.inline-form select:focus, .inline-form input:focus { outline: none; border-color: #8b5cf6; }
+.inline-form input::placeholder { color: #9ca3af; }
+.inline-form button { width: 100%; }
+
+.section-block { margin: 24px 16px 32px; }
+.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.section-header h2 { margin: 0; color: #1a1a2e; font-size: 15px; font-weight: 650; }
+
+.empty-state {
+  min-height: 140px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; color: #9ca3af; text-align: center; padding: 20px;
+}
+.empty-state svg { margin-bottom: 8px; color: #8b5cf6; }
+.empty-state p { font-size: 13px; }
+
+/* =========================================================
+   TRANSACTIONS — plain list, not a stack of cards.
+   No per-row background/border/shadow/radius, no gap
+   between rows — just a hairline divider, like a normal list.
+   ========================================================= */
+
+.tx-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.tx-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 13px 4px;
+
+  border-bottom: 1px solid #eef0f5;
+
+  transition: background 0.15s ease, border-radius 0.15s ease;
+}
+.tx-row:last-child {
+  border-bottom: none;
+}
+.tx-row:hover {
+  background: #f8f5ff;
+  border-radius: 10px;
+}
+
+.tx-icon {
+  width: 32px; height: 32px; border-radius: 50%; display: flex;
+  align-items: center; justify-content: center; flex-shrink: 0; font-size: 15px;
+}
+.tx-icon.credit { background: #e6f9ef; color: #10b981; }
+.tx-icon.debit { background: #f3e8ff; color: #8b5cf6; }
+.tx-info { flex: 1; min-width: 0; }
+.tx-title { font-size: 13px; font-weight: 600; color: #1a1a2e; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tx-date { font-size: 11px; color: #9ca3af; }
+.tx-amount { font-weight: 700; font-size: 13px; flex-shrink: 0; }
+.tx-amount.credit { color: #10b981; }
+.tx-amount.debit { color: #1a1a2e; }
+
+@media (min-width: 900px) {
+  .page-header.row {
+    flex-direction: row; align-items: center; justify-content: space-between;
+    max-width: 900px; margin: 0 auto; padding: 28px 40px 0;
+  }
+  .page-header h1 { font-size: 22px; }
+  .btn-inline { width: auto; }
+
+  .form-group { max-width: 900px; margin: 20px auto 0; padding: 0 40px; }
+  .tx-account-selector { max-width: 320px; }
+
+  .form-card { max-width: 900px; margin: 20px auto 0; padding: 24px 40px; }
+  .info-banner { max-width: 900px; margin: 16px auto 0; }
+
+  .inline-form { flex-direction: row; flex-wrap: wrap; }
+  .inline-form select, .inline-form input { flex: 1; min-width: 160px; width: auto; }
+  .inline-form button { flex-shrink: 0; width: auto; }
+
+  .section-block { max-width: 900px; margin: 28px auto 48px; padding: 0 40px; }
+
+  .tx-row { padding: 14px 4px; gap: 14px; }
+  .tx-icon { width: 38px; height: 38px; font-size: 17px; }
+  .tx-title { font-size: 14px; }
+  .tx-date { font-size: 12px; }
+  .tx-amount { font-size: 15px; }
+}

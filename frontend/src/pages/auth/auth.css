@@ -1,0 +1,1420 @@
+/* =========================================================
+   BANKSPHERE
+   PREMIUM FINTECH AUTH DESIGN
+   Purple + White
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  background: #ffffff;
+  color: #17121f;
+}
+
+/* =========================================================
+   APP SHELL
+   ========================================================= */
+
+.bs-app {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.bs-navbar {
+  height: 70px;
+  min-height: 70px;
+
+  padding: 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid #eeeaf3;
+
+  position: relative;
+  z-index: 50;
+}
+
+.bs-navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  text-decoration: none;
+}
+
+.bs-navbar-logo {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  color: white;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4c1d95,
+      #6d28d9,
+      #8b5cf6
+    );
+
+  box-shadow:
+    0 8px 22px rgba(109, 40, 217, 0.25);
+}
+
+.bs-navbar-name {
+  color: #21152d;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  letter-spacing: -0.4px;
+}
+
+.bs-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.bs-navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.bs-navbar-links a {
+  color: #716978;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: 0.2s;
+}
+
+.bs-navbar-links a:hover {
+  color: #6d28d9;
+}
+
+.bs-secure-badge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 13px;
+
+  border-radius: 999px;
+
+  color: #5b21b6;
+
+  background: #f6f1ff;
+
+  border: 1px solid #e7dcf8;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.bs-secure-badge svg {
+  color: #7c3aed;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.bs-main {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow: hidden;
+
+  display: flex;
+}
+
+/* =========================================================
+   SPLIT
+   ========================================================= */
+
+.bs-split {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   LEFT — PREMIUM PURPLE PANEL
+   ========================================================= */
+
+.bs-brand-panel {
+  position: relative;
+
+  flex: 0 0 52%;
+
+  height: 100%;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  padding: 55px 65px;
+
+  color: white;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255,255,255,0.16),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(196,181,253,0.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #3b0764 0%,
+      #4c1d95 32%,
+      #6d28d9 70%,
+      #7c3aed 100%
+    );
+}
+
+/* =========================================================
+   DECORATIVE BACKGROUND
+   ========================================================= */
+
+.bs-brand-panel::before {
+  content: "";
+
+  position: absolute;
+
+  width: 720px;
+  height: 720px;
+
+  right: -390px;
+  top: -250px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255,255,255,0.13);
+
+  box-shadow:
+    0 0 0 70px rgba(255,255,255,0.025),
+    0 0 0 140px rgba(255,255,255,0.018),
+    0 0 0 210px rgba(255,255,255,0.012);
+}
+
+.bs-brand-panel::after {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  left: -220px;
+  bottom: -220px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+/* =========================================================
+   BRAND GLOW
+   ========================================================= */
+
+.bs-brand-glow {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent 30%,
+      rgba(255,255,255,0.025) 50%,
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   BRAND CONTENT
+   ========================================================= */
+
+.bs-brand-content {
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+
+  max-width: 680px;
+}
+
+.bs-brand-tag {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 21px;
+
+  padding: 7px 13px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.10);
+
+  border: 1px solid rgba(255,255,255,0.16);
+
+  color: rgba(255,255,255,0.9);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   BIG TITLE
+   ========================================================= */
+
+.bs-brand-content h1 {
+  margin: 0 0 20px;
+
+  max-width: 650px;
+
+  color: #ffffff;
+
+  font-size: clamp(48px, 5.5vw, 78px);
+
+  line-height: 0.94;
+
+  letter-spacing: -4px;
+
+  font-weight: 900;
+}
+
+.bs-brand-content h1::first-line {
+  color: #ffffff;
+}
+
+.bs-brand-content > p {
+  max-width: 500px;
+
+  margin: 0 0 34px;
+
+  color: rgba(255,255,255,0.72);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   FLOATING BANK CARD
+   ========================================================= */
+
+.bs-brand-content::after {
+  content: "";
+
+  position: absolute;
+
+  width: 210px;
+  height: 125px;
+
+  right: 0;
+  top: -35px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.17),
+      rgba(255,255,255,0.05)
+    );
+
+  border: 1px solid rgba(255,255,255,0.18);
+
+  box-shadow:
+    0 25px 50px rgba(30,10,60,0.18);
+
+  transform: rotate(7deg);
+
+  opacity: 0.7;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.bs-brand-features {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+
+  max-width: 630px;
+}
+
+.bs-brand-feature {
+  min-height: 118px;
+
+  padding: 15px;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.12),
+      rgba(255,255,255,0.045)
+    );
+
+  border: 1px solid rgba(255,255,255,0.13);
+
+  backdrop-filter: blur(16px);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.bs-brand-feature:hover {
+  transform: translateY(-5px);
+
+  background:
+    rgba(255,255,255,0.15);
+}
+
+.bs-brand-feature-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 12px;
+
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.12);
+
+  color: white;
+
+  font-size: 15px;
+}
+
+.bs-brand-feature strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: white;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.bs-brand-feature span {
+  display: block;
+
+  color: rgba(255,255,255,0.58);
+
+  font-size: 8.5px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   RIGHT FORM AREA
+   ========================================================= */
+
+.bs-form-panel {
+  flex: 1;
+
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 35px 70px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(124,58,237,0.055),
+      transparent 35%
+    ),
+    #ffffff;
+}
+
+/* =========================================================
+   FORM CARD
+   ========================================================= */
+
+.bs-card {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 455px;
+
+  padding: 43px 42px;
+
+  border-radius: 24px;
+
+  background: rgba(255,255,255,0.97);
+
+  border: 1px solid #e8e1ef;
+
+  box-shadow:
+    0 35px 90px rgba(45,20,70,0.09),
+    0 8px 25px rgba(45,20,70,0.035);
+}
+
+.bs-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 42px;
+  right: 42px;
+  top: 0;
+
+  height: 3px;
+
+  border-radius: 0 0 10px 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4c1d95,
+      #7c3aed,
+      #a78bfa
+    );
+}
+
+/* =========================================================
+   FORM HEADER
+   ========================================================= */
+
+.bs-card h2 {
+  margin: 0;
+
+  color: #1f1728;
+
+  font-size: 29px;
+
+  line-height: 1.15;
+
+  font-weight: 850;
+
+  letter-spacing: -1px;
+}
+
+.bs-subtitle {
+  margin: 9px 0 30px;
+
+  color: #7c7483;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.bs-error {
+  margin-bottom: 18px;
+
+  padding: 12px 14px;
+
+  border-radius: 11px;
+
+  background: #fff5f5;
+
+  border: 1px solid #fecaca;
+
+  color: #dc2626;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.bs-field {
+  margin-bottom: 18px;
+}
+
+.bs-label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #443a4c;
+
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.bs-input-wrap {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.bs-field-icon {
+  position: absolute;
+
+  left: 15px;
+
+  z-index: 2;
+
+  color: #aaa1b2;
+
+  font-size: 15px;
+
+  pointer-events: none;
+}
+
+.bs-input-wrap input {
+  width: 100%;
+
+  height: 50px;
+
+  padding: 0 44px 0 43px;
+
+  border: 1px solid #ded7e7;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  background: #fcfbfe;
+
+  color: #241b2c;
+
+  font-size: 12px;
+
+  transition:
+    border 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.bs-input-wrap input:hover {
+  background: white;
+
+  border-color: #cfc4db;
+}
+
+.bs-input-wrap input:focus {
+  background: white;
+
+  border-color: #7c3aed;
+
+  box-shadow:
+    0 0 0 4px rgba(124,58,237,0.08);
+}
+
+.bs-input-wrap input::placeholder {
+  color: #aaa2af;
+}
+
+.bs-toggle-icon {
+  position: absolute;
+
+  right: 15px;
+
+  display: flex;
+
+  color: #9d94a6;
+
+  cursor: pointer;
+}
+
+.bs-toggle-icon:hover {
+  color: #7c3aed;
+}
+
+/* =========================================================
+   FORGOT
+   ========================================================= */
+
+.bs-forgot-row {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin: -2px 0 21px;
+}
+
+.bs-forgot-row a {
+  color: #6d28d9;
+
+  font-size: 11px;
+
+  font-weight: 750;
+
+  text-decoration: none;
+}
+
+.bs-forgot-row a:hover {
+  color: #4c1d95;
+
+  text-decoration: underline;
+}
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.bs-btn-primary {
+  width: 100%;
+
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4c1d95,
+      #6d28d9 55%,
+      #8b5cf6
+    );
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 13px 28px rgba(109,40,217,0.26);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.bs-btn-primary:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 18px 35px rgba(109,40,217,0.31);
+}
+
+.bs-btn-primary:active {
+  transform: translateY(0);
+}
+
+.bs-btn-primary:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+/* =========================================================
+   SECURITY NOTE
+   ========================================================= */
+
+.bs-security-note {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  margin: 20px 0 0;
+
+  color: #9d96a4;
+
+  font-size: 9.5px;
+
+  text-align: center;
+}
+
+.bs-security-note svg {
+  color: #10b981;
+}
+
+/* =========================================================
+   BOTTOM TEXT
+   ========================================================= */
+
+.bs-footer-text {
+  margin: 17px 0 0;
+
+  color: #77707e;
+
+  font-size: 11px;
+
+  text-align: center;
+}
+
+.bs-footer-text a {
+  color: #6d28d9;
+
+  font-weight: 750;
+
+  text-decoration: none;
+}
+
+.bs-footer-text a:hover {
+  color: #4c1d95;
+}
+
+.bs-link-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #6d28d9;
+
+  font-size: 11px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   SUCCESS
+   ========================================================= */
+
+.bs-success-icon {
+  width: 66px;
+  height: 66px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 19px;
+
+  border-radius: 50%;
+
+  background: #ecfdf5;
+
+  border: 1px solid #bbf7d0;
+
+  color: #10b981;
+
+  font-size: 29px;
+}
+
+/* =========================================================
+   SITE FOOTER
+   ========================================================= */
+
+.bs-site-footer {
+  height: 50px;
+  min-height: 50px;
+
+  padding: 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #ffffff;
+
+  border-top: 1px solid #eeeaf3;
+}
+
+.bs-site-footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.bs-site-footer-links a {
+  color: #817987;
+
+  font-size: 9px;
+
+  text-decoration: none;
+}
+
+.bs-site-footer-links a:hover {
+  color: #6d28d9;
+}
+
+.bs-site-footer-copy {
+  color: #aaa3ae;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   SHORT LAPTOP
+   ========================================================= */
+
+@media (max-height: 760px) and (min-width: 900px) {
+
+  .bs-navbar {
+    height: 58px;
+    min-height: 58px;
+  }
+
+  .bs-site-footer {
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .bs-brand-panel {
+    padding: 35px 50px;
+  }
+
+  .bs-brand-content h1 {
+    font-size: 51px;
+
+    margin-bottom: 13px;
+  }
+
+  .bs-brand-content > p {
+    margin-bottom: 20px;
+
+    font-size: 11px;
+  }
+
+  .bs-brand-feature {
+    min-height: 95px;
+
+    padding: 11px;
+  }
+
+  .bs-brand-feature-icon {
+    width: 28px;
+    height: 28px;
+
+    margin-bottom: 6px;
+  }
+
+  .bs-brand-feature span {
+    display: none;
+  }
+
+  .bs-form-panel {
+    padding: 20px 50px;
+  }
+
+  .bs-card {
+    padding: 30px 34px;
+  }
+
+  .bs-card h2 {
+    font-size: 24px;
+  }
+
+  .bs-subtitle {
+    margin-bottom: 18px;
+  }
+
+  .bs-field {
+    margin-bottom: 11px;
+  }
+
+  .bs-input-wrap input {
+    height: 42px;
+  }
+
+  .bs-btn-primary {
+    height: 43px;
+  }
+
+  .bs-security-note {
+    margin-top: 11px;
+  }
+
+  .bs-footer-text {
+    margin-top: 10px;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 899px) {
+
+  .bs-navbar {
+    height: 60px;
+    min-height: 60px;
+
+    padding: 0 18px;
+  }
+
+  .bs-navbar-links {
+    display: none;
+  }
+
+  .bs-main {
+    overflow: hidden;
+  }
+
+  .bs-split {
+    flex-direction: column;
+
+    overflow: hidden;
+  }
+
+  /* Purple section */
+
+  .bs-brand-panel {
+    flex: 0 0 36%;
+
+    width: 100%;
+
+    padding: 22px 25px;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .bs-brand-content {
+    max-width: 680px;
+  }
+
+  .bs-brand-content::after {
+    display: none;
+  }
+
+  .bs-brand-tag {
+    margin-bottom: 9px;
+
+    font-size: 7px;
+  }
+
+  .bs-brand-content h1 {
+    margin-bottom: 8px;
+
+    font-size: clamp(32px, 7vw, 50px);
+
+    letter-spacing: -2px;
+  }
+
+  .bs-brand-content > p {
+    max-width: 580px;
+
+    margin: 0 auto 14px;
+
+    font-size: 10px;
+  }
+
+  .bs-brand-features {
+    max-width: 620px;
+
+    margin: auto;
+
+    gap: 7px;
+  }
+
+  .bs-brand-feature {
+    min-height: 78px;
+
+    padding: 9px 7px;
+  }
+
+  .bs-brand-feature-icon {
+    width: 27px;
+    height: 27px;
+
+    margin: 0 auto 5px;
+
+    font-size: 11px;
+  }
+
+  .bs-brand-feature strong {
+    font-size: 8px;
+  }
+
+  .bs-brand-feature span {
+    display: none;
+  }
+
+  /* Form */
+
+  .bs-form-panel {
+    flex: 1;
+
+    width: 100%;
+
+    padding: 18px 20px;
+
+    overflow: hidden;
+  }
+
+  .bs-card {
+    max-width: 500px;
+
+    padding: 30px 32px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .bs-navbar {
+    height: 56px;
+    min-height: 56px;
+
+    padding: 0 14px;
+  }
+
+  .bs-navbar-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .bs-navbar-name {
+    font-size: 15px;
+  }
+
+  .bs-secure-badge {
+    padding: 6px 9px;
+  }
+
+  .bs-secure-badge span {
+    display: none;
+  }
+
+  /* Purple */
+
+  .bs-brand-panel {
+    flex: 0 0 31%;
+
+    padding: 14px 12px;
+  }
+
+  .bs-brand-tag {
+    margin-bottom: 6px;
+
+    padding: 5px 9px;
+
+    font-size: 6.5px;
+  }
+
+  .bs-brand-content h1 {
+    margin-bottom: 5px;
+
+    font-size: 27px;
+
+    letter-spacing: -1.4px;
+  }
+
+  .bs-brand-content > p {
+    margin-bottom: 8px;
+
+    font-size: 8.5px;
+
+    line-height: 1.35;
+  }
+
+  .bs-brand-features {
+    gap: 4px;
+  }
+
+  .bs-brand-feature {
+    min-height: 60px;
+
+    padding: 6px 4px;
+
+    border-radius: 9px;
+  }
+
+  .bs-brand-feature-icon {
+    width: 23px;
+    height: 23px;
+
+    margin-bottom: 3px;
+
+    font-size: 9px;
+  }
+
+  .bs-brand-feature strong {
+    font-size: 7px;
+  }
+
+  /* Form */
+
+  .bs-form-panel {
+    padding: 10px;
+  }
+
+  .bs-card {
+    max-width: 470px;
+
+    padding: 23px 19px;
+
+    border-radius: 17px;
+  }
+
+  .bs-card::before {
+    left: 20px;
+    right: 20px;
+  }
+
+  .bs-card h2 {
+    font-size: 21px;
+
+    letter-spacing: -0.5px;
+  }
+
+  .bs-subtitle {
+    margin: 6px 0 15px;
+
+    font-size: 9px;
+  }
+
+  .bs-field {
+    margin-bottom: 10px;
+  }
+
+  .bs-label {
+    margin-bottom: 5px;
+
+    font-size: 8px;
+  }
+
+  .bs-input-wrap input {
+    height: 38px;
+
+    font-size: 9px;
+  }
+
+  .bs-field-icon {
+    left: 12px;
+
+    font-size: 12px;
+  }
+
+  .bs-toggle-icon {
+    right: 12px;
+  }
+
+  .bs-btn-primary {
+    height: 39px;
+
+    font-size: 9.5px;
+  }
+
+  .bs-forgot-row {
+    margin-bottom: 13px;
+  }
+
+  .bs-forgot-row a {
+    font-size: 8.5px;
+  }
+
+  .bs-security-note {
+    margin-top: 9px;
+
+    font-size: 7px;
+  }
+
+  .bs-footer-text {
+    margin-top: 8px;
+
+    font-size: 8px;
+  }
+
+  /* Footer */
+
+  .bs-site-footer {
+    height: 35px;
+    min-height: 35px;
+
+    padding: 0 10px;
+
+    justify-content: center;
+  }
+
+  .bs-site-footer-copy {
+    display: none;
+  }
+
+  .bs-site-footer-links {
+    gap: 15px;
+  }
+
+  .bs-site-footer-links a {
+    font-size: 7px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .bs-navbar {
+    height: 52px;
+    min-height: 52px;
+  }
+
+  .bs-brand-panel {
+    flex: 0 0 29%;
+
+    padding: 10px 8px;
+  }
+
+  .bs-brand-content h1 {
+    font-size: 23px;
+  }
+
+  .bs-brand-content > p {
+    display: none;
+  }
+
+  .bs-brand-features {
+    margin-top: 5px;
+  }
+
+  .bs-brand-feature {
+    min-height: 50px;
+
+    padding: 5px 3px;
+  }
+
+  .bs-brand-feature-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .bs-brand-feature strong {
+    font-size: 6.5px;
+  }
+
+  .bs-form-panel {
+    padding: 7px;
+  }
+
+  .bs-card {
+    padding: 19px 15px;
+  }
+
+  .bs-card h2 {
+    font-size: 18px;
+  }
+
+  .bs-subtitle {
+    margin-bottom: 9px;
+  }
+
+  .bs-field {
+    margin-bottom: 7px;
+  }
+
+  .bs-input-wrap input {
+    height: 34px;
+  }
+
+  .bs-btn-primary {
+    height: 35px;
+  }
+
+  .bs-security-note {
+    display: none;
+  }
+}

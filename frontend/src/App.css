@@ -1,0 +1,39 @@
+:root {
+  --sidebar-bg: #1e1147;
+  --sidebar-active: #7c3aed;
+  --sidebar-text: #e8e3f7;
+  --sidebar-text-muted: #a89bc9;
+
+  --page-bg: #0f1229;
+  --card-bg: #ffffff;
+  --card-border: #eef0f5;
+
+  --primary: #8b5cf6;
+  --primary-dark: #7c3aed;
+  --primary-gradient: linear-gradient(135deg, #7c3aed, #a78bfa);
+
+  --text-primary: #1a1a2e;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+
+  --stat-balance-bg: #f3e8ff;
+  --stat-balance-icon: #8b5cf6;
+  --stat-income-bg: #e6f9ef;
+  --stat-income-icon: #10b981;
+  --stat-expense-bg: #fde8e8;
+  --stat-expense-icon: #ef4444;
+  --stat-savings-bg: #e8f0ff;
+  --stat-savings-icon: #3b82f6;
+
+  --action-purple-bg: #f3e8ff;
+  --action-purple-text: #8b5cf6;
+  --action-blue-bg: #e8f0ff;
+  --action-blue-text: #3b82f6;
+
+  --success: #10b981;
+  --danger: #ef4444;
+
+  --shadow-sm: 0 1px 3px rgba(30, 17, 71, 0.08);
+  --shadow-md: 0 6px 20px rgba(30, 17, 71, 0.1);
+  --shadow-lg: 0 16px 40px rgba(30, 17, 71, 0.14);
+}

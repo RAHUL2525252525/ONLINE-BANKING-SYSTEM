@@ -1,0 +1,20 @@
+# Environment secrets
+.env
+
+# Backend
+backend/banking-api/target/
+backend/banking-api/.mvn/
+*.class
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db

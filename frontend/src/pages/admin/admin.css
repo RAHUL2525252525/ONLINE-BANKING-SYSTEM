@@ -1,0 +1,835 @@
+/* =========================================================
+   NOVABANK ADMIN PANEL - COMPLETE STYLESHEET
+   PURPLE + BLACK PREMIUM THEME
+   Includes: Main Dashboard, User Details, Loans & Tables
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    Inter,
+    "DM Sans",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+  background: #f5f3fa;
+  color: #15121c;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* =========================================================
+   MAIN SHELL
+   ========================================================= */
+
+.dashboard-shell {
+  min-height: 100vh;
+  background: #f5f3fa;
+  color: #15121c;
+}
+
+/* =========================================================
+   NAVBAR & BRANDING
+   ========================================================= */
+
+.navbar {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 42px;
+  background: #ffffff;
+  border-bottom: 1px solid #e4dff0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #15121c;
+  font-size: 18px;
+  font-weight: 850;
+  letter-spacing: -0.7px;
+}
+
+.brand .icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #17131f;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.admin-badge {
+  margin-left: 5px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  background: #7c3aed;
+  color: #ffffff;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.user-chip {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.admin-avatar {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #8b5cf6;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.btn-logout {
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 15px;
+  border: 1px solid #7c3aed;
+  border-radius: 8px;
+  background: #7c3aed;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-logout:hover {
+  background: #17131f;
+  border-color: #17131f;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 18px rgba(124, 58, 237, 0.18);
+}
+
+/* =========================================================
+   PAGE CONTENT & HEADINGS
+   ========================================================= */
+
+.dashboard-content {
+  width: min(1420px, calc(100% - 84px));
+  margin: 0 auto;
+  padding: 48px 0 80px;
+}
+
+.dashboard-content h1 {
+  margin: 0;
+  color: #15121c;
+  font-size: 34px;
+  font-weight: 850;
+  letter-spacing: -1.5px;
+}
+
+.welcome-sub {
+  margin: 9px 0 0;
+  color: #77717f;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.welcome-sub strong {
+  color: #7c3aed;
+  font-weight: 750;
+}
+
+/* =========================================================
+   STAT CARDS
+   ========================================================= */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.stat-card {
+  min-height: 145px;
+  padding: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #e1dbea;
+  border-radius: 14px;
+  box-shadow: 0 2px 0 rgba(43, 25, 70, 0.02);
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.stat-card::after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  right: -35px;
+  bottom: -35px;
+  border-radius: 50%;
+  background: #eee7fb;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  border-color: #8b5cf6;
+  box-shadow: 0 12px 30px rgba(92, 45, 145, 0.1);
+}
+
+.stat-label {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #77717f;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-label svg {
+  color: #7c3aed;
+  font-size: 16px;
+}
+
+.stat-value {
+  position: relative;
+  z-index: 2;
+  color: #15121c;
+  font-size: 36px;
+  font-weight: 850;
+  letter-spacing: -1.5px;
+}
+
+/* =========================================================
+   NOTIFICATIONS / BANNERS
+   ========================================================= */
+
+.info-banner {
+  margin-top: 20px;
+  padding: 14px 16px;
+  background: #17131f;
+  border: 1px solid #7c3aed;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 11px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================================
+   SECTION CONTAINERS & HEADERS
+   ========================================================= */
+
+.section-block {
+  margin-top: 28px;
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #e1dbea;
+  border-radius: 14px;
+  box-shadow: 0 2px 0 rgba(43, 25, 70, 0.02);
+  overflow: visible;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  margin: 0;
+  color: #15121c;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+/* =========================================================
+   USER PROFILE CARD (AdminUserDetail Component)
+   ========================================================= */
+
+.form-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  background: #faf8fc;
+  border: 1px solid #ebdff5;
+  border-radius: 12px;
+}
+
+.profile-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2a2238;
+}
+
+.profile-row svg {
+  color: #7c3aed;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   GRID-BASED DATA TABLES (Accounts, Loans, Beneficiaries)
+   ========================================================= */
+
+.user-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.user-table-header {
+  display: grid;
+  padding: 12px 18px;
+  background: #17131f;
+  color: #a78bfa;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.user-table-row {
+  display: grid;
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1px solid #e1dbea;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #15121c;
+  font-weight: 600;
+  align-items: center;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.user-table-row:hover {
+  border-color: #8b5cf6;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.06);
+}
+
+.user-table-row span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   TRANSACTION LIST VIEW (AdminUserDetail Component)
+   ========================================================= */
+
+.tx-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tx-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: #faf8fc;
+  border: 1px solid #eee7f5;
+  border-radius: 10px;
+  transition: border-color 0.2s ease;
+}
+
+.tx-row:hover {
+  border-color: #7c3aed;
+}
+
+.tx-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-right: 14px;
+}
+
+.tx-icon.credit {
+  background: #eefdf4;
+  color: #10b981;
+}
+
+.tx-icon.debit {
+  background: #fef2f2;
+  color: #ef4444;
+}
+
+.tx-info {
+  flex-grow: 1;
+}
+
+.tx-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #15121c;
+}
+
+.tx-date {
+  font-size: 11px;
+  color: #77717f;
+  margin-top: 2px;
+}
+
+.tx-amount {
+  font-size: 14px;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.tx-amount.credit {
+  color: #10b981;
+}
+
+.tx-amount.debit {
+  color: #ef4444;
+}
+
+/* =========================================================
+   CARD LIST ITEM OVERHAUL (Admin Main List View)
+   ========================================================= */
+
+.admin-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  background: #ffffff;
+  border: 1px solid #e1dbea;
+  border-radius: 12px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-list-item:hover {
+  border-color: #8b5cf6;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.08);
+  transform: translateY(-1px);
+}
+
+.item-main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.item-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #15121c;
+}
+
+.item-title strong {
+  font-weight: 800;
+}
+
+.item-sub-details {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  color: #77717f;
+  flex-wrap: wrap;
+}
+
+.item-sub-details span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.role-tag,
+.type-badge {
+  background: #f1eef6;
+  color: #7c3aed;
+  font-weight: 800;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.acc-number-badge {
+  font-family: monospace, sans-serif;
+  background: #17131f;
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+.item-balance-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.balance-amount {
+  font-size: 16px;
+  font-weight: 850;
+  color: #15121c;
+}
+
+/* =========================================================
+   STATUS PILLS
+   ========================================================= */
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 65px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f1eef6;
+  border: 1px solid #ddd5e9;
+  color: #655d70;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.status-pill.active {
+  background: #17131f;
+  border-color: #17131f;
+  color: #ffffff;
+}
+
+.status-pill.locked {
+  background: #ffffff;
+  border-color: #7c3aed;
+  color: #7c3aed;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.row-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.icon-btn {
+  width: 33px;
+  height: 33px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #ffffff;
+  border: 1px solid #ddd6ea;
+  border-radius: 8px;
+  color: #675d73;
+  font-size: 13px;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.icon-btn:hover {
+  background: #7c3aed;
+  border-color: #7c3aed;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.icon-btn.danger:hover {
+  background: #17131f;
+  border-color: #17131f;
+  color: #ffffff;
+}
+
+.icon-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #faf9fc;
+  border: 1px dashed #cfc5dd;
+  border-radius: 10px;
+  color: #77717f;
+  text-align: center;
+}
+
+.empty-state p {
+  margin: 10px 0 0;
+  font-size: 11px;
+}
+
+/* =========================================================
+   SCROLLBAR & FOCUS
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f3fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b8a9ce;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+button:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN (Tablets & Mobile)
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .dashboard-content {
+    width: calc(100% - 50px);
+  }
+
+  .navbar {
+    padding: 0 25px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .user-table-header,
+  .user-table-row {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-table {
+    overflow-x: auto;
+  }
+
+  .user-table-header,
+  .user-table-row {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    min-height: 62px;
+    padding: 0 14px;
+  }
+
+  .brand {
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .brand .icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+
+  .admin-badge {
+    display: none;
+  }
+
+  .user-chip {
+    gap: 6px;
+  }
+
+  .admin-avatar {
+    width: 31px;
+    height: 31px;
+    font-size: 11px;
+  }
+
+  .btn-logout {
+    height: 34px;
+    padding: 0 9px;
+    border-radius: 7px;
+    font-size: 8px;
+    gap: 4px;
+  }
+
+  .dashboard-content {
+    width: calc(100% - 22px);
+    padding: 30px 0 55px;
+  }
+
+  .dashboard-content h1 {
+    font-size: 25px;
+    letter-spacing: -1px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    margin-top: 22px;
+  }
+
+  .stat-card {
+    min-height: 108px;
+    padding: 15px;
+    border-radius: 11px;
+  }
+
+  .stat-value {
+    font-size: 25px;
+  }
+
+  .section-block {
+    margin-top: 20px;
+    padding: 13px;
+    border-radius: 11px;
+  }
+
+  .admin-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .item-balance-group {
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px dashed #eeeaf3;
+  }
+
+  .form-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .navbar {
+    padding: 0 9px;
+  }
+
+  .brand {
+    font-size: 11px;
+  }
+
+  .brand .icon {
+    width: 29px;
+    height: 29px;
+  }
+
+  .dashboard-content {
+    width: calc(100% - 14px);
+    padding-top: 24px;
+  }
+
+  .dashboard-content h1 {
+    font-size: 21px;
+  }
+
+  .stat-card {
+    min-height: 96px;
+    padding: 11px;
+  }
+
+  .stat-value {
+    font-size: 21px;
+  }
+
+  .section-block {
+    padding: 10px;
+  }
+}
