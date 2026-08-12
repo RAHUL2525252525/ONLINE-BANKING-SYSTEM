@@ -17,6 +17,7 @@
   border-right: 1px solid #2c1c5c;
   padding: 20px 0;
   flex-shrink: 0;
+  overflow-y: auto; /* ADDED: allow sidebar to scroll if content overflows */
 }
 
 .sidebar-brand {
@@ -47,6 +48,7 @@
   gap: 4px;
   padding: 0 12px;
   flex: 1;
+  min-height: 0; /* ADDED: lets this flex child shrink instead of overflowing */
 }
 
 .sidebar-link {
@@ -78,6 +80,7 @@
   padding: 16px 16px 0;
   border-top: 1px solid #2c1c5c;
   margin-top: 12px;
+  flex-shrink: 0; /* ADDED: footer (and Logout button) never gets squeezed out */
 }
 
 .sidebar-user {
