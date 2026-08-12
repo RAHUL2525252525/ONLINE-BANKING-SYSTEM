@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "/api", // was: "http://localhost:8080/api"
+  baseURL: import.meta.env.VITE_API_URL || "/api",
   headers: {
     "Content-Type": "application/json",
   },
@@ -20,7 +20,6 @@ axiosInstance.interceptors.response.use(
   (error) => {
     const isAuthEndpoint = error.config?.url?.includes("/auth/login") ||
                             error.config?.url?.includes("/auth/register");
-
     if (error.response && error.response.status === 401 && !isAuthEndpoint) {
       localStorage.removeItem("token");
       window.location.href = "/login";
