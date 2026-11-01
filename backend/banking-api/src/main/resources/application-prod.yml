@@ -1,7 +1,7 @@
 spring:
   jpa:
     hibernate:
-      ddl-auto: validate   # NEVER use 'update' in production — validate only, prevents accidental schema changes
+      ddl-auto: update
     show-sql: false
 
 logging:
