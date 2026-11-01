@@ -29,55 +29,43 @@ public class SecurityConfig {
     private final JwtAuthFilter jwtAuthFilter;
     private final CorsConfigurationSource corsConfigurationSource;
 
-    // Password encryption
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-    // Authentication manager
     @Bean
     public AuthenticationManager authenticationManager(
             AuthenticationConfiguration config) throws Exception {
-
         return config.getAuthenticationManager();
     }
 
-    // Spring Security configuration
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-            // Enable CORS
-            .cors(cors -> cors
-                .configurationSource(corsConfigurationSource)
-            )
-
-            // Disable CSRF because this is a stateless JWT API
+            .cors(cors -> cors.configurationSource(corsConfigurationSource))
             .csrf(csrf -> csrf.disable())
-
-            // Don't create HTTP sessions
             .sessionManagement(session -> session
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
-
-            // Authorization rules
             .authorizeHttpRequests(auth -> auth
 
-                // Allow browser preflight requests
+                // Browser preflight requests
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 
-                // Public authentication endpoints
+                // Public auth endpoints (login, register)
                 .requestMatchers("/api/auth/**").permitAll()
 
                 // Admin endpoints require ADMIN role
                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
 
-                // Everything else requires authentication
-                .anyRequest().authenticated()
-            )
+                // All other API endpoints require a valid JWT
+                .requestMatchers("/api/**").authenticated()
 
-            // JWT filter runs before Spring's username/password filter
+                // Everything else is the React app (index.html, assets, /login, /dashboard...)
+                .anyRequest().permitAll()
+            )
             .addFilterBefore(
                 jwtAuthFilter,
                 UsernamePasswordAuthenticationFilter.class
