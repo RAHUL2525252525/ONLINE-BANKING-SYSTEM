@@ -1,31 +1,29 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 spring:
   application:
     name: banking-api
 
   datasource:
-    url: ${DB_URL:jdbc:mysql://localhost:3306/banking_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC}
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:Rahul@838}
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/banking_db}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 60000
+      initialization-fail-timeout: -1
 
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
-        dialect: org.hibernate.dialect.MySQLDialect
-    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: false
 
   mail:
     host: smtp.gmail.com
     port: 587
-    username: ${MAIL_USERNAME:Srinivasrahul838@gmail.com}
-    password: ${MAIL_APP_PASSWORD:Rahul@838}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_APP_PASSWORD:}
     properties:
       mail:
         smtp:
@@ -34,7 +32,7 @@ spring:
             enable: true
 
 jwt:
-  secret: ${JWT_SECRET:bankingSecretKeyForJWTTokenGenerationMustBeVeryLongAndSecure123456}
+  secret: ${JWT_SECRET}
   expiration: 86400000
 
 app:
@@ -42,5 +40,5 @@ app:
 
 logging:
   level:
-    com.banking: DEBUG
-    org.springframework.security: DEBUG
+    com.banking: INFO
+    org.springframework.security: WARN
